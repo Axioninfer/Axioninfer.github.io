@@ -119,9 +119,9 @@ const teamData = {
     },
     hoang: {
         name: "Hoang Le Doang",
-        role: "Position Title",
+        role: "Robotics & AI Systems Engineer",
         image: "team_pics/hoang.jpeg",
-        bio: "Detailed description of Hoang's role, expertise, background, and achievements. This is where you can add the full biography with all relevant information about their experience and contributions to the team."
+        bio: "Hoang combines deep expertise in <strong>robotics, AI and software-hardware integration</strong>. He's developed and deployed <strong>large‐scale language models</strong>—optimizing inference speed and energy efficiency on CPU architectures at <em>Intel</em>—and built <strong>edge‐AI pipelines</strong> for real‐time computer vision projects using embedded platforms like ESP32‐CAM and i.MX8. With contributions to <strong>open‐source toolchains (Apache TVM)</strong> and hands‐on experience across PyTorch, ROS, Docker and Kubernetes, he excels at <em>bridging research and production</em>. Passionate about sustainable, scalable AI, he's driven innovation in autonomous systems through <strong>SLAM and point‐cloud mapping</strong> at TUM Phoenix Robotics. Hoang holds an <em>M.Sc. in Robotics, Cognition, Intelligence</em> and a <em>B.Eng. in Electrical & Computer Engineering from the Technical University of Munich</em>."
     },
     yawri: {
         name: "Yawri Carr",
