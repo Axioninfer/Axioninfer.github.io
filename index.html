@@ -83,25 +83,26 @@
                     </div>
                     <h3 class="member-name">Rayen Dhahri</h3>
                     <p class="member-role">Position Title</p>
-                    <p class="member-bio">Brief description of their role and expertise.</p>
+                    <p class="member-bio-short">Brief description of their role and expertise.</p>
+                    <button class="btn btn-learn-more" onclick="openModal('rayen')">Learn More</button>
                 </div>
                 <div class="team-member">
                     <div class="member-photo">
-                        <div class="placeholder-photo">
-                            <span>👤</span>
-                        </div>
+                        <img src="team_pics/hoang.jpeg" alt="Hoang Le Doang" class="member-image">
                     </div>
                     <h3 class="member-name">Hoang Le Doang</h3>
                     <p class="member-role">Position Title</p>
-                    <p class="member-bio">Brief description of their role and expertise.</p>
+                    <p class="member-bio-short">Brief description of their role and expertise.</p>
+                    <button class="btn btn-learn-more" onclick="openModal('hoang')">Learn More</button>
                 </div>
                 <div class="team-member">
                     <div class="member-photo">
-                        <img src="yawri.jpeg" alt="Yawri Carr" class="member-image">
+                        <img src="team_pics/yawri.jpeg" alt="Yawri Carr" class="member-image">
                     </div>
                     <h3 class="member-name">Yawri Carr</h3>
                     <p class="member-role">Technology, Law & Business Strategist</p>
-                    <p class="member-bio">Yawri brings a truly <strong>interdisciplinary perspective</strong>, combining deep expertise in <em>technology, law and business</em>. She's worked hands-on in the software industry, applying <strong>generative AI and natural language processing</strong>, and has guided organisations on technology law, policy, trustworthy systems and <em>AI ethics</em>. Equally passionate about management and strategy, she has served as a <strong>Digital Youth Envoy</strong> for international bodies, shaping global conversations on tech and society. Yawri holds an <em>M.Sc. in Technology & Society from TU Munich</em> and an <em>MBA in Artificial Intelligence from the University of São Paulo</em>.</p>
+                    <p class="member-bio-short">Interdisciplinary expert combining technology, law, and business with AI ethics expertise.</p>
+                    <button class="btn btn-learn-more" onclick="openModal('yawri')">Learn More</button>
                 </div>
                 <div class="team-member">
                     <div class="member-photo">
@@ -111,7 +112,8 @@
                     </div>
                     <h3 class="member-name">Team Member 4</h3>
                     <p class="member-role">Position Title</p>
-                    <p class="member-bio">Brief description of their role and expertise.</p>
+                    <p class="member-bio-short">Brief description of their role and expertise.</p>
+                    <button class="btn btn-learn-more" onclick="openModal('member4')">Learn More</button>
                 </div>
             </div>
         </div>
@@ -164,6 +166,23 @@
             </div>
         </div>
     </footer>
+
+    <!-- Team Member Modals -->
+    <div id="teamModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-header">
+                <img id="modalImage" src="" alt="" class="modal-member-image">
+                <div class="modal-member-info">
+                    <h2 id="modalName"></h2>
+                    <p id="modalRole" class="modal-role"></p>
+                </div>
+            </div>
+            <div class="modal-body">
+                <p id="modalBio"></p>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>

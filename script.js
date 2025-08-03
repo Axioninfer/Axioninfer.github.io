@@ -108,3 +108,87 @@ function toggleMobileMenu() {
     const navMenu = document.querySelector('.nav-menu');
     navMenu.classList.toggle('show');
 }
+
+// Team member data
+const teamData = {
+    rayen: {
+        name: "Rayen Dhahri",
+        role: "Position Title",
+        image: "team_pics/rayen.jpeg",
+        bio: "Detailed description of Rayen's role, expertise, background, and achievements. This is where you can add the full biography with all relevant information about their experience and contributions to the team."
+    },
+    hoang: {
+        name: "Hoang Le Doang",
+        role: "Position Title",
+        image: "team_pics/hoang.jpeg",
+        bio: "Detailed description of Hoang's role, expertise, background, and achievements. This is where you can add the full biography with all relevant information about their experience and contributions to the team."
+    },
+    yawri: {
+        name: "Yawri Carr",
+        role: "Technology, Law & Business Strategist",
+        image: "team_pics/yawri.jpeg",
+        bio: "Yawri brings a truly <strong>interdisciplinary perspective</strong>, combining deep expertise in <em>technology, law and business</em>. She's worked hands-on in the software industry, applying <strong>generative AI and natural language processing</strong>, and has guided organisations on technology law, policy, trustworthy systems and <em>AI ethics</em>. Equally passionate about management and strategy, she has served as a <strong>Digital Youth Envoy</strong> for international bodies, shaping global conversations on tech and society. Yawri holds an <em>M.Sc. in Technology & Society from TU Munich</em> and an <em>MBA in Artificial Intelligence from the University of São Paulo</em>."
+    },
+    member4: {
+        name: "Team Member 4",
+        role: "Position Title",
+        image: "team_pics/member4.jpeg",
+        bio: "Detailed description of Team Member 4's role, expertise, background, and achievements. This is where you can add the full biography with all relevant information about their experience and contributions to the team."
+    }
+};
+
+// Modal functionality
+function openModal(memberId) {
+    const modal = document.getElementById('teamModal');
+    const member = teamData[memberId];
+    
+    if (member) {
+        document.getElementById('modalName').textContent = member.name;
+        document.getElementById('modalRole').textContent = member.role;
+        document.getElementById('modalBio').innerHTML = member.bio;
+        
+        const modalImage = document.getElementById('modalImage');
+        modalImage.src = member.image;
+        modalImage.alt = member.name;
+        
+        // Handle image error (fallback to placeholder)
+        modalImage.onerror = function() {
+            this.style.display = 'none';
+        };
+        
+        modal.style.display = 'block';
+        document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    }
+}
+
+function closeModal() {
+    const modal = document.getElementById('teamModal');
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto'; // Restore scrolling
+}
+
+// Add modal event listeners
+document.addEventListener('DOMContentLoaded', function() {
+    // Existing code...
+    const existingCode = document.querySelector('.nav-menu');
+    
+    // Modal close functionality
+    const modal = document.getElementById('teamModal');
+    const closeBtn = document.querySelector('.close');
+    
+    closeBtn.onclick = closeModal;
+    
+    // Close modal when clicking outside
+    window.onclick = function(event) {
+        if (event.target === modal) {
+            closeModal();
+        }
+    };
+    
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape' && modal.style.display === 'block') {
+            closeModal();
+        }
+    });
+});
