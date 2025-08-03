@@ -113,9 +113,9 @@ function toggleMobileMenu() {
 const teamData = {
     rayen: {
         name: "Rayen Dhahri",
-        role: "Position Title",
+        role: "Senior Machine Learning Engineer",
         image: "team_pics/rayen.jpeg",
-        bio: "Detailed description of Rayen's role, expertise, background, and achievements. This is where you can add the full biography with all relevant information about their experience and contributions to the team."
+        bio: "Rayen is a seasoned <strong>machine‐learning engineer</strong> whose career spans leading research labs and global technology innovators. At <em>Carl Zeiss</em>, he designed and deployed <strong>real-time generative-AI and computer-vision pipelines</strong> on edge accelerators, optimizing models for NPUs, Jetsons and TPUs. At <em>CARIAD (Volkswagen Group)</em>, he advanced <strong>instance and semantic segmentation architectures</strong> for next-generation vehicle perception, and at <em>BMW</em> he unified ONNX, TFLite and TVM into a comprehensive framework powering <strong>sensor fusion and autonomous-driving features</strong>. His research on <strong>Bayesian neural‐network sparsification</strong> at ETH Zurich's BMI Lab earned recognition in the <em>NeurIPS community</em>, and at <em>Intel's Data Innovation Lab</em> he achieved high sparsity and performance gains on production-scale models. Earlier roles at <em>Huawei Munich</em> and <em>Infineon</em> saw him pioneer <strong>reinforcement-learning for robotic fleets</strong> and develop AI pipelines for semiconductor testing. A certified <strong>Digital Innovator (McKinsey Forward Certificate)</strong> and <em>UnternehmerTUM alumnus</em>, Rayen has pitched scalable AI solutions to industry and VC panels. He holds an <em>M.Sc. in Robotics, Cognition & Intelligence</em> and a <em>B.Eng. in Electrical & Computer Engineering from the Technical University of Munich</em>."
     },
     hoang: {
         name: "Hoang Le Doang",
