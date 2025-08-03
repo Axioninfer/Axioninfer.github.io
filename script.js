@@ -114,7 +114,7 @@ const teamData = {
     rayen: {
         name: "Rayen Dhahri",
         role: "Senior Machine Learning Engineer",
-        image: "team_pics/rayen.jpeg",
+        image: "team_pics/rayen.heic",
         bio: "Rayen is a seasoned <strong>machine‐learning engineer</strong> whose career spans leading research labs and global technology innovators. At <em>Carl Zeiss</em>, he designed and deployed <strong>real-time generative-AI and computer-vision pipelines</strong> on edge accelerators, optimizing models for NPUs, Jetsons and TPUs. At <em>CARIAD (Volkswagen Group)</em>, he advanced <strong>instance and semantic segmentation architectures</strong> for next-generation vehicle perception, and at <em>BMW</em> he unified ONNX, TFLite and TVM into a comprehensive framework powering <strong>sensor fusion and autonomous-driving features</strong>. His research on <strong>Bayesian neural‐network sparsification</strong> at ETH Zurich's BMI Lab earned recognition in the <em>NeurIPS community</em>, and at <em>Intel's Data Innovation Lab</em> he achieved high sparsity and performance gains on production-scale models. Earlier roles at <em>Huawei Munich</em> and <em>Infineon</em> saw him pioneer <strong>reinforcement-learning for robotic fleets</strong> and develop AI pipelines for semiconductor testing. A certified <strong>Digital Innovator (McKinsey Forward Certificate)</strong> and <em>UnternehmerTUM alumnus</em>, Rayen has pitched scalable AI solutions to industry and VC panels. He holds an <em>M.Sc. in Robotics, Cognition & Intelligence</em> and a <em>B.Eng. in Electrical & Computer Engineering from the Technical University of Munich</em>."
     },
     hoang: {
@@ -129,11 +129,11 @@ const teamData = {
         image: "team_pics/yawri.jpeg",
         bio: "Yawri brings a truly <strong>interdisciplinary perspective</strong>, combining deep expertise in <em>technology, law and business</em>. She's worked hands-on in the software industry, applying <strong>generative AI and natural language processing</strong>, and has guided organisations on technology law, policy, trustworthy systems and <em>AI ethics</em>. Equally passionate about management and strategy, she has served as a <strong>Digital Youth Envoy</strong> for international bodies, shaping global conversations on tech and society. Yawri holds an <em>M.Sc. in Technology & Society from TU Munich</em> and an <em>MBA in Artificial Intelligence from the University of São Paulo</em>."
     },
-    member4: {
-        name: "Team Member 4",
-        role: "Position Title",
-        image: "team_pics/member4.jpeg",
-        bio: "Detailed description of Team Member 4's role, expertise, background, and achievements. This is where you can add the full biography with all relevant information about their experience and contributions to the team."
+    nguyen: {
+        name: "Nguyen Van Binh",
+        role: "Full-Stack Software Engineer",
+        image: "team_pics/nguyen.jpeg",
+        bio: "Nguyen is a <strong>versatile full-stack software engineer</strong> who brings comprehensive expertise across the entire development spectrum. A graduate of the prestigious <em>National University of Singapore (NUS)</em>, he excels in building <strong>scalable backend architectures</strong> using modern frameworks like Node.js, Python (Django/FastAPI), and Java Spring Boot. His frontend prowess spans <strong>React, Vue.js, and Angular</strong> ecosystems, crafting responsive user experiences with TypeScript, Next.js, and modern CSS frameworks. In the cloud domain, Nguyen architects robust solutions on <em>AWS, Google Cloud, and Azure</em>, leveraging <strong>containerization with Docker and Kubernetes</strong>, serverless computing, and microservices patterns. His expertise extends to <strong>DevOps practices</strong> including CI/CD pipelines, Infrastructure as Code (Terraform), monitoring with Prometheus/Grafana, and database optimization across SQL (PostgreSQL, MySQL) and NoSQL (MongoDB, Redis) systems. With experience in <strong>real-time applications using WebSockets</strong>, API design following RESTful and GraphQL principles, and performance optimization techniques, Nguyen bridges the gap between cutting-edge technology and practical business solutions."
     }
 };
 

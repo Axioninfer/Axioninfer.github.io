@@ -259,10 +259,15 @@ section {
     max-height: 120px;
     border-radius: 50%;
     object-fit: cover;
-    object-position: center;
+    object-position: center top;
     margin: 0 auto;
     display: block;
     flex-shrink: 0;
+}
+
+/* Specific positioning for Yawri's image */
+.member-image[alt="Yawri Carr"] {
+    object-position: center 20%;
 }
 
 .member-name {
