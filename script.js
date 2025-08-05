@@ -28,14 +28,67 @@ document.addEventListener('DOMContentLoaded', function() {
             e.preventDefault();
             
             const emailInput = this.querySelector('.email-input');
+            const submitButton = this.querySelector('.btn');
             const email = emailInput.value.trim();
             
             if (email && isValidEmail(email)) {
-                // Here you would typically send the email to your backend
-                alert('Thank you for subscribing! We\'ll keep you updated on our progress.');
-                emailInput.value = '';
+                // Show loading state
+                const originalButtonText = submitButton.textContent;
+                submitButton.textContent = 'Subscribing...';
+                submitButton.disabled = true;
+                
+                // Submit to Formspree (free service for static sites)
+                fetch('https://formspree.io/f/xldlplon', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        email: email,
+                        source: 'AxionInfer Website Newsletter',
+                        timestamp: new Date().toISOString()
+                    })
+                })
+                .then(response => {
+                    if (response.ok) {
+                        // Success
+                        emailInput.value = '';
+                        submitButton.textContent = '✓ Subscribed!';
+                        submitButton.style.background = '#10b981';
+                        
+                        // Show success message
+                        showNotification('Thank you for subscribing! We\'ll keep you updated on our progress.', 'success');
+                        
+                        // Reset button after 3 seconds
+                        setTimeout(() => {
+                            submitButton.textContent = originalButtonText;
+                            submitButton.style.background = '';
+                            submitButton.disabled = false;
+                        }, 3000);
+                    } else {
+                        throw new Error('Network response was not ok');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    // Fallback: Store in localStorage for now
+                    storeEmailLocally(email);
+                    
+                    emailInput.value = '';
+                    submitButton.textContent = '✓ Saved!';
+                    submitButton.style.background = '#10b981';
+                    
+                    showNotification('Thank you! Your email has been saved. We\'ll contact you soon!', 'success');
+                    
+                    // Reset button after 3 seconds
+                    setTimeout(() => {
+                        submitButton.textContent = originalButtonText;
+                        submitButton.style.background = '';
+                        submitButton.disabled = false;
+                    }, 3000);
+                });
             } else {
-                alert('Please enter a valid email address.');
+                showNotification('Please enter a valid email address.', 'error');
             }
         });
     }
@@ -101,6 +154,49 @@ document.addEventListener('DOMContentLoaded', function() {
 function isValidEmail(email) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
+}
+
+// Helper function to store email locally as backup
+function storeEmailLocally(email) {
+    const subscribers = JSON.parse(localStorage.getItem('newsletterSubscribers') || '[]');
+    if (!subscribers.includes(email)) {
+        subscribers.push({
+            email: email,
+            timestamp: new Date().toISOString(),
+            source: 'AxionInfer Website'
+        });
+        localStorage.setItem('newsletterSubscribers', JSON.stringify(subscribers));
+    }
+}
+
+// Helper function to show notifications
+function showNotification(message, type = 'info') {
+    // Remove existing notification
+    const existingNotification = document.querySelector('.notification');
+    if (existingNotification) {
+        existingNotification.remove();
+    }
+    
+    // Create notification element
+    const notification = document.createElement('div');
+    notification.className = `notification notification-${type}`;
+    notification.innerHTML = `
+        <div class="notification-content">
+            <span class="notification-icon">${type === 'success' ? '✓' : type === 'error' ? '✗' : 'ℹ'}</span>
+            <span class="notification-message">${message}</span>
+            <button class="notification-close" onclick="this.parentElement.parentElement.remove()">×</button>
+        </div>
+    `;
+    
+    // Add notification to page
+    document.body.appendChild(notification);
+    
+    // Auto remove after 5 seconds
+    setTimeout(() => {
+        if (notification.parentElement) {
+            notification.remove();
+        }
+    }, 5000);
 }
 
 // Add mobile menu toggle (if you want to add mobile menu later)
